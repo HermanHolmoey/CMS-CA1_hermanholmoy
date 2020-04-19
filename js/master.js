@@ -14,7 +14,7 @@ fetch(productUrl)
 
 function productInfo(json) {
     const product = json;
-    console.dir(json);
+
     const container = document.querySelector(".displayJson");
     let html = "";
     
@@ -22,9 +22,9 @@ function productInfo(json) {
         html += `<div class="displayJson">
                         <img class="image" src="${product[index].images[0].src}" alt="${product[index].images.name}">
                         <div class="container">
-                            <h3>${product[index].name}</h3>
-                            <p>${product[index].prices.price}</p>
-                            <a class="button">Add to cart</a>
+                            <h4>${product[index].name}</h4>
+                            <p class="price">${product[index].prices.price_prefix}${product[index].prices.regular_price}.00</p>
+                            <a class="button">${product[index].add_to_cart.text}</a>
                         </div>
                 </div>`;
     }
